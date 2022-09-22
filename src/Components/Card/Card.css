@@ -1,0 +1,32 @@
+#WorkDiv{
+    background-color: hsl(15, 100%, 70%);
+}
+
+#PlayDiv{
+    background-color: hsl(195, 74%, 62%);
+}
+
+#StudyDiv{
+background-color: hsl(348, 100%, 68%);
+}
+
+#ExerciseDiv{
+    background-color: hsl(145, 58%, 55%);
+}
+
+#SocialDiv{
+    background-color: hsl(264, 64%, 52%);
+}
+
+#SelfCareDiv{
+    background-color:hsl(43, 84%, 65%);
+}
+
+.CategoriesIcons{
+    width: 16%;
+    float: right;
+}
+
+.Comparrison{
+    color: hsl(236, 100%, 87%) 
+}
