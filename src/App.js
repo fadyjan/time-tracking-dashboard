@@ -5,12 +5,13 @@ import Sociallogo from "./Assets/Icons/icon-social.svg";
 import Studylogo from "./Assets/Icons/icon-study.svg";
 import Worklogo from "./Assets/Icons/icon-work.svg";
 import UImage from "./Assets/Images/image-jeremy.png";
-
+import { useState } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import ProfileDetails from "./Components/ProfileDetails/ProfileDetails";
 
 function App() {
+  const [period, setPeriod] = useState("Daily");
   const DashBordArray = [
     {
       UserName: "Jeremy Robson",
@@ -18,48 +19,70 @@ function App() {
       UserDashbord: [
         {
           Category: "Work",
-          Hours: "32hrs",
+          DailyHours: "8hrs",
+          WeeklyHours: "40hrs",
+          MonthlyHours: "160hrs",
           LastWeek: "-36hrs",
           Icon: Worklogo,
         },
-        { Category: "Play", Hours: "10hrs", LastWeek: "-8hrs", Icon: playlogo },
+        {
+          Category: "Play",
+          DailyHours: "1hrs",
+          WeeklyHours: "7hrs",
+          MonthlyHours: "28hrs",
+          LastWeek: "-8hrs",
+          Icon: playlogo,
+        },
         {
           Category: "Study",
-          Hours: "4hrs",
+          DailyHours: "2hrs",
+          WeeklyHours: "14hrs",
+          MonthlyHours: "56hrs",
           LastWeek: "-7hrs",
           Icon: Studylogo,
         },
         {
           Category: "Exercise",
-          Hours: "4hrs",
+          DailyHours: "2hrs",
+          WeeklyHours: "10hrs",
+          MonthlyHours: "40hrs",
           LastWeek: "-5hrs",
           Icon: exerciselogo,
         },
         {
           Category: "Social",
-          Hours: "5hrs",
+          DailyHours: "2hrs",
+          WeeklyHours: "14hrs",
+          MonthlyHours: "56hrs",
           LastWeek: "-10hrs",
           Icon: Sociallogo,
         },
         {
           Category: "SelfCare",
-          Hours: "2hrs",
+          DailyHours: "1hrs",
+          WeeklyHours: "7hrs",
+          MonthlyHours: "28hrs",
           LastWeek: "-2hrs",
           Icon: SelfCarelogo,
         },
       ],
     },
   ];
+
+  const PeriodHandler = (ClickedButton) => {
+    setPeriod(ClickedButton);
+  };
   return (
     <div id="App">
       <div id="MainContainer">
         <ProfileDetails
+          PeriodHandler={PeriodHandler}
           UserName={DashBordArray[0].UserName}
           UserImage={DashBordArray[0].UserImage}
         ></ProfileDetails>
         <div id="DetailsContainer">
           {DashBordArray[0].UserDashbord.map((CurrentRecord) => {
-            return <Card CurrentRecord={CurrentRecord}></Card>;
+            return <Card period = {period} CurrentRecord={CurrentRecord}></Card>;
           })}
         </div>
       </div>
