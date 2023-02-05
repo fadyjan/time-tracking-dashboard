@@ -9,9 +9,12 @@ import { useState } from "react";
 import "./App.css";
 import Card from "./Components/Card/Card";
 import ProfileDetails from "./Components/ProfileDetails/ProfileDetails";
+import LoadingSpinner from "./Components/LoadingSpinner/LoadingSpinner";
 
 function App() {
   const [period, setPeriod] = useState("Daily");
+  const [loading, setLoading] = useState(true);
+
   const DashBordArray = [
     {
       UserName: "Jeremy Robson",
@@ -72,18 +75,25 @@ function App() {
   const PeriodHandler = (ClickedButton) => {
     setPeriod(ClickedButton);
   };
+  const SamulateApi = (state)=>{
+    setLoading(state)
+    setInterval(()=>{
+      setLoading(true)
+    },2500)
+  }
   return (
     <div id="App">
       <div id="MainContainer">
         <ProfileDetails
           PeriodHandler={PeriodHandler}
+          SamulateApi ={SamulateApi}
           UserName={DashBordArray[0].UserName}
           UserImage={DashBordArray[0].UserImage}
         ></ProfileDetails>
         <div id="DetailsContainer">
-          {DashBordArray[0].UserDashbord.map((CurrentRecord) => {
-            return <Card period = {period} CurrentRecord={CurrentRecord}></Card>;
-          })}
+          {!loading && <LoadingSpinner />}
+          {loading && DashBordArray[0].UserDashbord.map((CurrentRecord) => {
+            return(<Card period={period} CurrentRecord={CurrentRecord}></Card>) })}
         </div>
       </div>
     </div>

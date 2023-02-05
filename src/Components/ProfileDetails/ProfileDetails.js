@@ -6,6 +6,7 @@ export default function ProfileDetails(props) {
     const FirstName = CapitalUserName.split(" ")[0]
     const LastName = CapitalUserName.split(" ")[1]
     const OnCLickFunc = (event)=>{
+      props.SamulateApi(false)
       props.PeriodHandler(event.target.innerHTML)
     }
   return (

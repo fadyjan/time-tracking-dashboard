@@ -3,7 +3,7 @@ import "./Card.css"
 
 export default function Card(props) {
   const PeriodSelection = props.period ;
-
+  console.log(PeriodSelection)
   const FuncComp = ()=>{
     if (PeriodSelection === "Daily") {
       return <h1>{props.CurrentRecord.DailyHours}</h1>
