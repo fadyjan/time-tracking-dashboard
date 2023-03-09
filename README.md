@@ -5,7 +5,7 @@
 
 
 ## Deployed Site
-[Time Tracking Dashboard](https://pricing-component-with-toggle-master-react.vercel.app/)
+[Time Tracking Dashboard]https://time-tracking-dashboard-orcin.vercel.app/)
 
 ## Summary
 
