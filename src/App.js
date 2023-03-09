@@ -25,7 +25,7 @@ function App() {
           DailyHours: "8hrs",
           WeeklyHours: "40hrs",
           MonthlyHours: "160hrs",
-          LastWeek: "-36hrs",
+          LastWeek: " - 36hrs",
           Icon: Worklogo,
         },
         {
@@ -33,7 +33,7 @@ function App() {
           DailyHours: "1hrs",
           WeeklyHours: "7hrs",
           MonthlyHours: "28hrs",
-          LastWeek: "-8hrs",
+          LastWeek: " - 8hrs",
           Icon: playlogo,
         },
         {
@@ -41,7 +41,7 @@ function App() {
           DailyHours: "2hrs",
           WeeklyHours: "14hrs",
           MonthlyHours: "56hrs",
-          LastWeek: "-7hrs",
+          LastWeek: " - 7hrs",
           Icon: Studylogo,
         },
         {
@@ -49,7 +49,7 @@ function App() {
           DailyHours: "2hrs",
           WeeklyHours: "10hrs",
           MonthlyHours: "40hrs",
-          LastWeek: "-5hrs",
+          LastWeek: " - 5hrs",
           Icon: exerciselogo,
         },
         {
@@ -57,7 +57,7 @@ function App() {
           DailyHours: "2hrs",
           WeeklyHours: "14hrs",
           MonthlyHours: "56hrs",
-          LastWeek: "-10hrs",
+          LastWeek: " - 10hrs",
           Icon: Sociallogo,
         },
         {
@@ -65,7 +65,7 @@ function App() {
           DailyHours: "1hrs",
           WeeklyHours: "7hrs",
           MonthlyHours: "28hrs",
-          LastWeek: "-2hrs",
+          LastWeek: " - 2hrs",
           Icon: SelfCarelogo,
         },
       ],
@@ -79,7 +79,7 @@ function App() {
     setLoading(state)
     setInterval(()=>{
       setLoading(true)
-    },2500)
+    },2000)
   }
   return (
     <div id="App">
