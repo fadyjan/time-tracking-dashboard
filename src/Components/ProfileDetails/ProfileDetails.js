@@ -16,7 +16,7 @@ export default function ProfileDetails(props) {
           <img src={props.UserImage} alt="UserProfile"></img>
           <div id="InfoWrapper">
           <h2 id="Report"> Report For</h2>
-          <h2 id="UserName"> {FirstName} <br></br>{LastName}</h2>
+          <h2 id="UserName"> {FirstName} {LastName}</h2>
           </div>
           
         </div>
